@@ -14,6 +14,16 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+config :logger, level: :info
+
+#
+# dev.exs
+#
+# Do not include metadata nor timestamps in development logs
+#config :logger, :console, format: "[$level] $message\n"
+
+# Set a higher stacktrace during development. Avoid configuring such
+# in production as building large stacktraces may be expensive.
+#config :phoenix, :stacktrace_depth, 20
+
+
