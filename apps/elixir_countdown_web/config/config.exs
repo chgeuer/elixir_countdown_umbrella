@@ -15,8 +15,10 @@ config :elixir_countdown_web, ElixirCountdownWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "SoFfxg04AVRO1RH0fZifmiuxrCbb5zITJQq6hvp/tG7/pN/VrwtEvqBxcIbQug7U",
   render_errors: [view: ElixirCountdownWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: ElixirCountdownWeb.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: ElixirCountdownWeb.PubSub, adapter: Phoenix.PubSub.PG2],
+  server: true,
+  root: ".",
+  version: Application.spec(:phoenix_distillery, :vsn)
 
 # Configures Elixir's Logger
 config :logger, :console,

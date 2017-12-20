@@ -15,8 +15,11 @@ use Mix.Config
 # which you typically run after static files are built.
 config :elixir_countdown_web, ElixirCountdownWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [host: "www.example.com"],
+  http: [:inet, port: 4000],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  debug_errors: true,
+  code_reloader: false
 
 # ## SSL Support
 #
