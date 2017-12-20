@@ -23,7 +23,10 @@ defmodule ElixirCountdown.Mixfile do
   def application do
     [
       mod: {ElixirCountdown.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [
+        :logger, 
+        # :runtime_tools
+      ]
     ]
   end
 
