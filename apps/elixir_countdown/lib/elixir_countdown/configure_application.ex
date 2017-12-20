@@ -29,12 +29,7 @@ defmodule ElixirCountdown.Configuration do
 	def initialize_config do
 		dbParams = Regex.named_captures(@connectionStringRegex, get_env!(@envnames.database.connection_string))
 
-		# :elixir_countdown ElixirCountdown.Repo
-
-
-		IO.puts("init DB 2")
 		set_cfg(@appdb, @database, [:database], dbParams["database"])
-		IO.puts("init DB 3")
 		set_cfg(@appdb, @database, [:hostname], dbParams["hostname"])
 		set_cfg(@appdb, @database, [:username], dbParams["username"])
 		set_cfg(@appdb, @database, [:password], dbParams["password"])
