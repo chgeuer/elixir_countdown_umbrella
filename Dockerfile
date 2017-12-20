@@ -38,8 +38,10 @@ ENV MIX_ENV=prod
 RUN mix deps.get && \
     mix deps.compile && \
     cd apps/elixir_countdown_web/assets && \
+    npm config set strict-ssl false && \
     npm install && \
     node node_modules/brunch/bin/brunch build && \
+    cd ../../.. && \
     mix phx.digest && \
     mix release --env=$MIX_ENV
 
