@@ -12,6 +12,8 @@ defmodule ElixirCountdown.Application do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    ElixirCountdown.Configuration.initialize_config()
+
     Supervisor.start_link([
       supervisor(ElixirCountdown.Repo, []),
     ], strategy: :one_for_one, name: ElixirCountdown.Supervisor)
