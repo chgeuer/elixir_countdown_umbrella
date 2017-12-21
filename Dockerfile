@@ -3,7 +3,8 @@ FROM alpine:3.7 as elixir
 ENV ELIXIR_VERSION 1.5.2
 
 RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
-    apk --update add ncurses-libs wget curl git bash nodejs nodejs-npm && \
+    apk --update add ncurses-libs wget curl git bash && \
+    apk --update add nodejs nodejs-npm && \
     apk --update add erlang erlang-crypto erlang-syntax-tools erlang-parsetools \
                      erlang-inets erlang-ssl erlang-public-key erlang-eunit \
                      erlang-asn1 erlang-sasl erlang-erl-interface erlang-dev && \
